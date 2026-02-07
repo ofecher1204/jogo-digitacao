@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Roboto Mono", monospace;
+  --color-game-bg: #0f172a;
+  --color-game-text: #e2e8f0;
+  --color-game-cursor: #22d3ee;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: var(--color-game-bg);
+  color: var(--color-game-text);
+  font-family: var(--font-mono);
+  /* Removemos o 'white-space: pre' aqui para permitir quebra de linha */
+}
+
+/* Cursor piscante estilo "Bloco" ou "Sublinhado" */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-active {
+  animation: blink 1s step-end infinite;
+  background-color: rgba(250, 204, 21, 0.2); /* Fundo amarelo suave */
+  border-bottom: 3px solid #facc15; /* Sublinhado forte */
+}
+
+/* Estilo para erro no caractere atual */
+.cursor-error {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-bottom: 3px solid #ef4444;
+  color: #ef4444;
+}
