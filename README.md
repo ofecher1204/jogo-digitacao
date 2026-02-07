@@ -1,4 +1,4 @@
-# Typing Game: Jogo e Aprendizado de segunda Linguagem ⌨️🧠
+# Jogo de digitação: Jogo para aprendizado de segunda língua ⌨️🧠
 
 Um jogo de digitação focado na aquisição de linguagem e memória muscular, construído com **React**, **TypeScript** e **TailwindCSS**.
 
