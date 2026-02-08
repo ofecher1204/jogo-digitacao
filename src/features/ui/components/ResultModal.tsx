@@ -1,11 +1,11 @@
-import { useGameStore } from "../store/useGameStore";
+import { useGameStore } from "../../../store/useGameStore";
 import { motion } from "framer-motion";
 
-export const ResultsScreen = () => {
+export const ResultModal = () => {
   const { wpm, mistakes, nextLesson, restartLevel, startReviewLevel, lesson } =
     useGameStore();
 
-  const totalErrors = Object.values(mistakes).reduce((a, b) => a + b, 0);
+  const totalErrors = Object.values(mistakes).reduce((a: number, b: number) => a + b, 0);
   const accuracy = Math.max(0, 100 - totalErrors * 2); // Cálculo simples de precisão
   const hasErrors = totalErrors > 0;
 

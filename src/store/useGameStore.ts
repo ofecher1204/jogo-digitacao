@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { Howl } from "howler";
 import { lessons } from "../data/lessons";
-import type { Lesson } from "../data/lessons";
+import type { LearningUnit } from "../types";
 import { commonWords } from "../data/dictionary";
 
 const soundClick = new Howl({ src: ["click.mp3"], volume: 0.5 });
@@ -14,7 +14,7 @@ interface GameState {
   currentLessonIndex: number;
   cursor: number;
   isError: boolean;
-  lesson: Lesson;
+  lesson: LearningUnit;
   mistakes: Record<string, number>;
   streak: number;
   status: GameStatus;
@@ -128,8 +128,12 @@ export const useGameStore = create<GameState>((set, get) => ({
 
     const drillText = reviewWords.sort(() => 0.5 - Math.random()).join(' ').toLowerCase();
 
-    const reviewLesson: Lesson = {
-      id: 999,
+    const reviewLesson: LearningUnit = {
+      id: "review-1",
+      domain: 'english', 
+      sphere: 'academic',
+      category: 'daily_life',
+      level: 1,
       text: drillText,
       image:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400",

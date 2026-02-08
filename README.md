@@ -12,9 +12,11 @@ O design do jogo baseia-se em três pilares científicos:
 
 1. **Memória Implícita & Automatização** (Bryce P. Towne):
    - Focamos no "loop interno" motor. A mecânica de **Bloqueio de Erro** (o cursor não avança se você errar) impede a fossilização de movimentos incorretos, forçando o cérebro a recalibrar a memória muscular instantaneamente.
-2. **Hipótese do Input** (Stephen Krashen):
+2. **Esferas de Uso & Contexto** (Novo!):
+   - O conteúdo não é organizado apenas por gramática, mas por **Esferas de Uso** (Acadêmico, Casual, Técnico) e **Tópicos** (Viagens, Tecnologia). Isso permite que o usuário treine vocabulário relevante para sua realidade ("English for Specific Purposes").
+3. **Hipótese do Input** (Stephen Krashen):
    - Utilizamos o conceito de *Comprehensible Input*. Cada frase é acompanhada de uma imagem contextual para garantir que o usuário associe a digitação ao significado (*meaning*), e não apenas à forma mecânica. O ambiente é desenhado para manter o "Filtro Afetivo" baixo (baixa ansiedade).
-3. **Gamificação & Engajamento** (Figueroa):
+4. **Gamificação & Engajamento** (Figueroa):
    - Feedback imediato (visual e sonoro), barras de progresso e contadores de streak são usados para manter o estado de *flow* e motivar a repetição necessária para a maestria.
 
 ---
@@ -57,17 +59,15 @@ O design do jogo baseia-se em três pilares científicos:
 
 ```text
 src/
-├── components/      # Componentes UI (ProgressBar, ResultsScreen, etc.)
-├── data/            # Lições estáticas e dicionários
+├── features/        # Arquitetura baseada em Funcionalidades (Novo!)
+│   ├── game/        # Lógica e componentes do jogo (TypingArea, Hooks)
+│   └── ui/          # Componentes de UI compartilhados (Layout, Modal)
+├── data/            # Lições estáticas
 ├── store/           # Lógica de estado global com Zustand
-├── App.tsx          # Componente principal
+├── types.ts         # Definições de Tipos (Esferas de Uso, LearningUnit)
+├── App.tsx          # Composition Root
 ├── index.css        # Tailwind v4 e variáveis de tema
 └── main.tsx         # Ponto de entrada do React
 ```
-## 🔮 Roadmap & Próximos Passos
 
-- [ ] **Integração Backend (Supabase)**: Salvar progresso do usuário e histórico de erros.
-- [ ] **Sistema de Níveis**: Progressão de dificuldade baseada na teoria $i + 1$ (input ligeiramente acima do nível atual).
-- [ ] **Modo Infinito**: Geração procedural de frases baseada no vocabulário adquirido.
-- [ ] **Configurações de Acessibilidade**: Ajuste de fontes e contraste para dislexia.
 
