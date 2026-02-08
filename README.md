@@ -46,8 +46,8 @@ O design do jogo baseia-se em três pilares científicos:
 ### Passo a Passo
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/typing-game.git](https://github.com/seu-usuario/typing-game.git)
-   cd typing-game
+   git clone https://github.com/ofecher1204/jogo-digitacao.git
+   cd jogo-digitacao
 2. Instale as dependências: npm install
 3. Execute o servidor de desenvolvimento: npm run dev
 4. Acesse: Abra http://localhost:5173 no seu navegador.
