@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Segredos e Variáveis de Ambiente (CRÍTICO)
+.env
+.env.local
+.env.*.local
+
+# Cache de Ferramentas
+.eslintcache
+.stylelintcache
+
+# Pasta de cobertura de testes (se for usar Vitest/Jest)
+coverage/
+
+# Arquivos temporários do sistema
+Thumbs.db
